@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Personal</title>
+    <link rel="stylesheet" href ="../static/css/styles.css"/>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar_logo">
+            <img src="../static/logo.gif" alt="Logo del código"> Blog Personal
+        </div>
+        <ul class="navbar_navegacion">
+            <li class="navbar_navegacion_item"><a href="#" class="navbar_link">Recientes</a></li>
+            <li class="navbar_navegacion_item"><a href="#" class="navbar_link">Calendario</a></li>
+        </ul>
+    </header>
+
+    <main class="main">
+        <section>
+            <h2>Agrega una nueva entrada</h2>
+            <form class="form" method="POST">
+                <p class="form_input">
+                    <label for="titulo" class="form_label">Título:</label>
+                    <input type="text" name="tit" id="titulo" class="title">
+                </p>
+                <p class="form_input">
+                    <label for="entry" class="form_label">Contenido:</label>
+                    <textarea name="content" id="entry" class="form_textarea"></textarea>
+                </p>
+
+                <button type="submit" class="form_submit">Agregar</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Entradas Recientes:</h2>
+            <article class="entry">
+                <div>
+                    <h3 class="entry_title">
+                        Día para aprender python y Flask
+                    </h3>
+                    <time datetime="07-08-2025" class="entry_date">* 07-08-2025</time>
+                </div>
+                <p class="entry_content">
+                    Hoy dicté 4 clases y estuve desarrollando un proyecto para aprender flask
+                </p>
+            </article>
+            {% for entrada in entradas %}
+            <article class="entry">
+                <div>
+                    <h3 class="entry_title">
+                        {{entrada.titulo}}
+                    </h3>
+                    <time datetime={{entrada.fecha}} class="entry_date">* {{entrada.fecha}}</time>
+                </div>
+                <p class="entry_content">
+                    {{entrada.contenido}}
+                </p>
+            </article>
+            {% endfor %}
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer_content">
+            <section class="left">
+                <a class="footer_item">Creada por Andrés Rodríguez</a>
+                <a class="footer_item">Mira otros proyectos</a>
+            </section>
+            <section class="right">
+                <div class="footer_column">
+                    <a class="footer_item">Recientes</a>
+                    <a class="footer_item">Calendario</a>
+                </div>
+
+                <div class="footer_column">
+                    <a class="footer_item">Acerca de</a>
+                    <a class="footer_item">Cómo fue desarrollado esto</a>
+                </div>
+
+            </section>
+        </div>
+
+    </footer>
+</body>
+</html>
