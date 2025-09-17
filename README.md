@@ -18,7 +18,6 @@ blog-personal/
 │
 ├── app.py # Código principal de Flask
 ├── requirements.txt # Librerías necesarias
-├── .env.example # Ejemplo de configuración de variables de entorno
 │
 ├── templates/
 │ └── index.html # Plantilla principal del blog
